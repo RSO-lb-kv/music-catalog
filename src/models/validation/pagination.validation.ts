@@ -1,16 +1,13 @@
-import { Type } from 'class-transformer';
-import { IsInt, IsOptional, Min } from 'class-validator';
+import { Min } from 'class-validator';
+import { ArgsType, Field, Int } from 'type-graphql';
 
+@ArgsType()
 export class VPagination {
-  @IsInt()
+  @Field(type => Int, { nullable: true })
   @Min(1)
-  @IsOptional()
-  @Type(() => Number)
   page: number = 1;
 
-  @IsInt()
+  @Field(type => Int, { nullable: true })
   @Min(1)
-  @IsOptional()
-  @Type(() => Number)
   perPage: number = 10;
 }

@@ -13,6 +13,9 @@
     "lint": "tslint -p tsconfig.json -c tslint.json"
   },
   "dependencies": {
+    "@nestcloud/common": "^0.5.2",
+    "@nestcloud/config": "^0.5.2",
+    "@nestcloud/consul": "^0.5.2",
     "@nestjs/common": "^6.8.3",
     "@nestjs/core": "^6.8.3",
     "@nestjs/graphql": "^6.5.3",
@@ -22,6 +25,7 @@
     "apollo-server-express": "^2.9.6",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.10.1",
+    "consul": "^0.36.0",
     "dotenv": "^8.1.0",
     "graphql": "^14.5.8",
     "graphql-subscriptions": "^1.1.0",

@@ -16,6 +16,7 @@
     "@nestcloud/common": "^0.5.2",
     "@nestcloud/config": "^0.5.2",
     "@nestcloud/consul": "^0.5.2",
+    "@nestcloud/service": "^0.5.2",
     "@nestjs/common": "^6.8.3",
     "@nestjs/core": "^6.8.3",
     "@nestjs/graphql": "^6.5.3",

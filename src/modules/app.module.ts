@@ -9,6 +9,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { resolve } from 'path';
 
 import { CatalogModule } from './catalog/catalog.module';
+import { DemoModule } from './demo/demo.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { CatalogModule } from './catalog/catalog.module';
     BootModule.register(resolve(), 'consul.yml'),
     ConfigModule.register({ dependencies: [NEST_BOOT, NEST_CONSUL] }),
     ServiceModule.register({ dependencies: [NEST_BOOT] }),
+    DemoModule,
   ],
 })
 export class AppModule {}

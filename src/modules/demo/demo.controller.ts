@@ -7,7 +7,7 @@ export class DemoController {
     return {
       clani: ['lb5480', 'kv8904'],
       opis_projekta: 'Projekt implementira aplikacijo za deljenje glasbe.',
-      mikrostoritve: [],
+      mikrostoritve: ['http://157.230.124.197:3000/v1/catalog'],
       github: [
         'https://github.com/RSO-lb-kv/music-catalog-ms',
         'https://github.com/RSO-lb-kv/song-upload-ms',

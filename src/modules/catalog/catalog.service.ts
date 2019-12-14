@@ -1,19 +1,15 @@
 import { PromMethodCounter } from '@digikare/nestjs-prom';
-import { InjectService, Service } from '@nestcloud/service';
 import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import { Song } from '../../models/entities/song.entity';
 import { VPagination } from '../../models/validation/pagination.validation';
-import { VSong } from '../../models/validation/song.validation';
+import { VSong, VSongUpdate } from '../../models/validation/song.validation';
 
 @Injectable()
 export class CatalogService implements OnModuleInit {
-  constructor(
-    @InjectRepository(Song) private songRepo: Repository<Song>,
-    @InjectService() private readonly service: Service,
-  ) {}
+  constructor(@InjectRepository(Song) private songRepo: Repository<Song>) {}
 
   onModuleInit() {
     /* CONSUL TEST EXAMPLE */
@@ -43,8 +39,15 @@ export class CatalogService implements OnModuleInit {
     const entity = new Song();
     entity.title = song.title;
     entity.description = song.description;
-    entity.lengthInSeconds = 213;
-    entity.uri = '';
+    entity.uploadedBy = song.uploadedBy;
+
+    return await this.songRepo.save(entity);
+  }
+
+  async updateById(id: number, data: VSongUpdate) {
+    const entity = await this.songRepo.findOne({ id });
+    entity.status = data.status;
+    entity.uri = data.uri;
 
     return await this.songRepo.save(entity);
   }

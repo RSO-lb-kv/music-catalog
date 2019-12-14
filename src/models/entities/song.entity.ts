@@ -19,11 +19,7 @@ export class Song {
   @Column()
   uploadedBy: string;
 
-  @Column()
-  @Field(type => Int)
-  lengthInSeconds: number;
-
-  @Column()
+  @Column({ nullable: true })
   @Field()
   uri: string;
 

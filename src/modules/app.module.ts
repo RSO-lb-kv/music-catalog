@@ -25,7 +25,10 @@ import { TerminusService } from './health/terminus.service';
     GraphQLModule.forRoot({
       autoSchemaFile: 'schema.gql',
     }),
-    BootModule.register(resolve(), 'consul.yml'),
+    BootModule.register(
+      resolve(),
+      process.env.DEVELOPMENT === 'true' ? 'consul-dev.yml' : 'consul.yml',
+    ),
     ConsulModule.register({
       dependencies: [NEST_BOOT],
     }),

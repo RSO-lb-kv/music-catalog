@@ -21,7 +21,6 @@ type Song {
   id: Int!
   title: String!
   description: String!
-  lengthInSeconds: Int!
   uri: String!
   created: DateTime!
 }

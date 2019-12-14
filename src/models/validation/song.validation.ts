@@ -11,4 +11,16 @@ export class VSong {
   @Field()
   @IsString()
   description: string;
+
+  @IsString()
+  @IsNotEmpty()
+  uploadedBy: string;
+}
+
+export class VSongUpdate {
+  @IsString()
+  uri: string;
+
+  @IsString()
+  status: 'UPLOADING' | 'FINISHED';
 }

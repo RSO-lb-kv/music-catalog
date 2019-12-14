@@ -35,7 +35,6 @@ import { TerminusService } from './health/terminus.service';
     ConfigModule.register({ dependencies: [NEST_BOOT, NEST_CONSUL] }),
     ServiceModule.register({
       dependencies: [NEST_CONSUL],
-      discoveryHost: process.env.POD_IP,
       service: {
         id: 'music-catalog',
         name: 'music-catalog',

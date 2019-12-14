@@ -1,3 +1,4 @@
+import { PromMethodCounter } from '@digikare/nestjs-prom';
 import { InjectService, Service } from '@nestcloud/service';
 import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -23,6 +24,7 @@ export class CatalogService implements OnModuleInit {
    */
   }
 
+  @PromMethodCounter()
   async listSongs({ page, perPage }: VPagination) {
     return await this.songRepo.find({
       order: { id: 'ASC' },

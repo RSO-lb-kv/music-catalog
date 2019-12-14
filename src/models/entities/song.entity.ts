@@ -17,12 +17,18 @@ export class Song {
   description: string;
 
   @Column()
+  uploadedBy: string;
+
+  @Column()
   @Field(type => Int)
   lengthInSeconds: number;
 
   @Column()
   @Field()
   uri: string;
+
+  @Column({ default: 'UPLOADING' })
+  status: 'UPLOADING' | 'FINISHED';
 
   @CreateDateColumn()
   @Field()

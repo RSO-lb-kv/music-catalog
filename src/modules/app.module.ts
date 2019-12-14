@@ -43,6 +43,7 @@ import { TerminusService } from './health/terminus.service';
       healthCheck: {
         timeout: '1s',
         interval: '10s',
+        deregistercriticalserviceafter: '30s',
         route: '/health/ready',
       } as any,
       maxRetry: 5,

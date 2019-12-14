@@ -1,3 +1,4 @@
+import { InjectService, Service } from '@nestcloud/service';
 import { Injectable, NotFoundException, OnModuleInit } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -10,16 +11,16 @@ import { VSong } from '../../models/validation/song.validation';
 export class CatalogService implements OnModuleInit {
   constructor(
     @InjectRepository(Song) private songRepo: Repository<Song>,
-  ) /*     @InjectConfig() private config: ConsulConfig,
-    @InjectService() private service: Service, */
-  {}
+    @InjectService() private readonly service: Service,
+  ) {}
 
   onModuleInit() {
     /* CONSUL TEST EXAMPLE */
     /*     console.log(this.config.get());
     this.config.watch('test', console.log);
-
-    console.log(this.service.getServiceNodes('song-upload')); */
+    
+    console.log(this.service.getServiceNodes('song-upload'));
+   */
   }
 
   async listSongs({ page, perPage }: VPagination) {

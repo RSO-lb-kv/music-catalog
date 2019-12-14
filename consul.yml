@@ -1,18 +1,17 @@
-host: 127.0.0.1
-port: 8500
 config:
   key: music-catalog
-discoveryHost: localhost
-
 consul:
+  host: 35.246.14.139
+  port: 80
+  discoveryHost: 35.246.14.139
   service:
     id: music-catalog
     name: music-catalog
     port: 3000
     tags: ['v1.0.1']
-  healthCheck:
-    timeout: 1s
-    interval: 10s
-    route: /health
-  maxRetry: 5
-  retryInterval: 5000
+  #healthCheck:
+  #  timeout: 1s
+  #  interval: 10s
+  #  route: /health
+  #maxRetry: 5
+  #retryInterval: 5000

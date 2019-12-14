@@ -34,7 +34,20 @@ import { TerminusService } from './health/terminus.service';
     }),
     ConfigModule.register({ dependencies: [NEST_BOOT, NEST_CONSUL] }),
     ServiceModule.register({
-      dependencies: [NEST_BOOT, NEST_CONSUL],
+      dependencies: [NEST_CONSUL],
+      discoveryHost: process.env.POD_IP,
+      service: {
+        id: 'music-catalog',
+        name: 'music-catalog',
+        port: +process.env.PORT,
+      },
+      healthCheck: {
+        timeout: '1s',
+        interval: '10s',
+        route: '/health/ready',
+      } as any,
+      maxRetry: 5,
+      retryInterval: 5000,
     }),
     TerminusModule.forRootAsync({
       imports: [HealthModule],

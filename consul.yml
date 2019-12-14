@@ -3,14 +3,3 @@ config:
 consul:
   host: 35.246.14.139
   port: 80
-  service:
-    id: music-catalog
-    name: music-catalog
-    port: 3000
-    tags: ['v1.0.1']
-  healthCheck:
-    timeout: 1s
-    interval: 10s
-    route: /health/live
-  maxRetry: 5
-  retryInterval: 5000

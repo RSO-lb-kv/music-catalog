@@ -1,3 +1,4 @@
+import { PromModule } from '@digikare/nestjs-prom';
 import { BootModule } from '@nestcloud/boot';
 import { NEST_BOOT, NEST_CONSUL } from '@nestcloud/common';
 import { ConfigModule } from '@nestcloud/config';
@@ -33,6 +34,11 @@ import { TerminusService } from './health/terminus.service';
     TerminusModule.forRootAsync({
       imports: [HealthModule],
       useClass: TerminusService,
+    }),
+    PromModule.forRoot({
+      defaultLabels: {
+        app: 'music_catalog',
+      },
     }),
     DemoModule,
     HealthModule,

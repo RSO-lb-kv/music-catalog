@@ -13,6 +13,7 @@
     "lint": "tslint -p tsconfig.json -c tslint.json"
   },
   "dependencies": {
+    "@digikare/nestjs-prom": "^0.2.1",
     "@godaddy/terminus": "^4.3.1",
     "@nestcloud/common": "^0.5.2",
     "@nestcloud/config": "^0.5.2",
@@ -34,6 +35,7 @@
     "graphql-subscriptions": "^1.1.0",
     "graphql-tools": "^4.0.5",
     "pg": "^7.12.1",
+    "prom-client": "^11.5.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3",

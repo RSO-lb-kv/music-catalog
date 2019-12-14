@@ -35,11 +35,7 @@ import { TerminusService } from './health/terminus.service';
       imports: [HealthModule],
       useClass: TerminusService,
     }),
-    PromModule.forRoot({
-      defaultLabels: {
-        app: 'music_catalog',
-      },
-    }),
+    PromModule.forRoot(),
     DemoModule,
     HealthModule,
   ],

@@ -9,9 +9,9 @@ consul:
     name: music-catalog
     port: 3000
     tags: ['v1.0.1']
-  #healthCheck:
-  #  timeout: 1s
-  #  interval: 10s
-  #  route: /health
-  #maxRetry: 5
-  #retryInterval: 5000
+  healthCheck:
+    timeout: 1s
+    interval: 10s
+    route: /health/live
+  maxRetry: 5
+  retryInterval: 5000

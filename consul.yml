@@ -1,5 +1,5 @@
 config:
   key: music-catalog
 consul:
-  host: 35.246.14.139
+  host: 34.89.16.1
   port: 80

@@ -3,7 +3,6 @@ config:
 consul:
   host: localhost
   port: 8500
-  discoveryHost: localhost
   service:
     id: music-catalog
     name: music-catalog

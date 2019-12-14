@@ -3,7 +3,6 @@ config:
 consul:
   host: 35.246.14.139
   port: 80
-  discoveryHost: 35.246.14.139
   service:
     id: music-catalog
     name: music-catalog

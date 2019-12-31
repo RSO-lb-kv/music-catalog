@@ -24,6 +24,10 @@ export class Song {
   @Field()
   uri: string;
 
+  @Column({ nullable: true })
+  @Field()
+  imageUrl: string;
+
   @Column({ default: 'UPLOADING' })
   @Field()
   status: 'UPLOADING' | 'FINISHED';

@@ -41,6 +41,7 @@ export class CatalogService implements OnModuleInit {
     entity.title = song.title;
     entity.description = song.description;
     entity.uploadedBy = song.uploadedBy;
+    entity.imageUrl = song.imageUrl;
 
     return await this.songRepo.save(entity);
   }

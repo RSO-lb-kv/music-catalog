@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { Field, InputType } from 'type-graphql';
 
 @InputType()
@@ -15,6 +15,11 @@ export class VSong {
   @IsString()
   @IsNotEmpty()
   uploadedBy: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @IsOptional()
+  imageUrl: string;
 }
 
 export class VSongUpdate {

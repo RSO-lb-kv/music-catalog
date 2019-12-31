@@ -17,6 +17,7 @@ export class Song {
   description: string;
 
   @Column()
+  @Field()
   uploadedBy: string;
 
   @Column({ nullable: true })
@@ -24,6 +25,7 @@ export class Song {
   uri: string;
 
   @Column({ default: 'UPLOADING' })
+  @Field()
   status: 'UPLOADING' | 'FINISHED';
 
   @CreateDateColumn()

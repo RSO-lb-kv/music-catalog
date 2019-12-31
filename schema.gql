@@ -8,10 +8,6 @@ The javascript `Date` as string. Type represents date and time as the ISO Date s
 """
 scalar DateTime
 
-type Mutation {
-  createSong(data: VSong!): Song!
-}
-
 type Query {
   song(id: Float!): Song!
   songs(page: Int = 1, perPage: Int = 10): [Song!]!
@@ -21,12 +17,10 @@ type Song {
   id: Int!
   title: String!
   description: String!
+  uploadedBy: String!
   uri: String!
+  status: String!
   created: DateTime!
-}
-
-type Subscription {
-  songCreated: Song!
 }
 
 input VSong {

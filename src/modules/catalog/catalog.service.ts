@@ -23,6 +23,7 @@ export class CatalogService implements OnModuleInit {
   @PromMethodCounter()
   async listSongs({ page, perPage }: VPagination) {
     return await this.songRepo.find({
+      where: { status: 'FINISHED' },
       order: { id: 'ASC' },
       skip: (page - 1) * perPage,
       take: perPage,

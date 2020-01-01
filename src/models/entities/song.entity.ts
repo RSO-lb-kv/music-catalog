@@ -21,11 +21,11 @@ export class Song {
   uploadedBy: string;
 
   @Column({ nullable: true })
-  @Field()
+  @Field({ nullable: true })
   uri: string;
 
   @Column({ nullable: true })
-  @Field()
+  @Field({ nullable: true })
   imageUrl: string;
 
   @Column({ default: 'UPLOADING' })

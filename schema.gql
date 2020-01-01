@@ -18,8 +18,8 @@ type Song {
   title: String!
   description: String!
   uploadedBy: String!
-  uri: String!
-  imageUrl: String!
+  uri: String
+  imageUrl: String
   status: String!
   created: DateTime!
 }

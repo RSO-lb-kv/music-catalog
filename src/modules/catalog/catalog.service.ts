@@ -50,6 +50,7 @@ export class CatalogService implements OnModuleInit {
     const entity = await this.songRepo.findOne({ id });
     entity.status = data.status;
     entity.uri = data.uri;
+    entity.bpm = data.bpm;
 
     return await this.songRepo.save(entity);
   }

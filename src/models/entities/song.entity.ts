@@ -26,6 +26,10 @@ export class Song {
 
   @Column({ nullable: true })
   @Field({ nullable: true })
+  bpm: string;
+
+  @Column({ nullable: true })
+  @Field({ nullable: true })
   imageUrl: string;
 
   @Column({ default: 'UPLOADING' })

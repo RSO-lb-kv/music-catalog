@@ -27,5 +27,8 @@ export class VSongUpdate {
   uri: string;
 
   @IsString()
+  bpm: string;
+
+  @IsString()
   status: 'UPLOADING' | 'FINISHED';
 }
